@@ -35,8 +35,8 @@ function RandomColour() {
 
   return (
      <div>
-      <h1 className="text-xl text-white font-bold">{Color}</h1>
-        <div className="flex gap-3 p-6 justify-center">
+      <h1 className="text-xl text-white text-center p-4 font-bold">{Color}</h1>
+        <div className="flex flex-col md:flex md:flex-row gap-3 p-6 justify-center">
         <button onClick={()=>setTypeOfColor("hex")} className="bg-zinc-100 rounded-md p-2 cursor-pointer" >Create Hex Color</button>
         <button onClick={()=>setTypeOfColor("rgb")} className="bg-zinc-100 rounded-md p-2 cursor-pointer" >Create RGB Color</button>
         <button onClick={typeOfColor === 'hex' ? handleCreateHexColor : handleCreateRgbColor} className="bg-zinc-100 rounded-md p-2 cursor-pointer" >Generate Random Color</button>
