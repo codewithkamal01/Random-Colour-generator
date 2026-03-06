@@ -9,10 +9,6 @@ function RandomColour() {
     document.body.style.backgroundColor = Color;
   }, [Color]);
 
-  // useEffect(()=>{
-  //   if (typeOfColor === 'rgb') handleCreateRgbColor();
-  //   else handleCreateHexColor();
-  // },[typeOfColor])
 
   const handleCreateColor=(length)=>{
           return Math.floor(Math.random()*length)
@@ -34,16 +30,18 @@ function RandomColour() {
     const g = handleCreateColor(256);
     const b = handleCreateColor(256);
   
-    setColor(`rgb${r},${g},${b}`);
+    setColor(`rgb(${r},${g},${b})`);
   }
 
   return (
- 
-    <div className="flex gap-3 p-6 justify-center">
+     <div>
+      <h1 className="text-xl text-white font-bold">{Color}</h1>
+        <div className="flex gap-3 p-6 justify-center">
         <button onClick={()=>setTypeOfColor("hex")} className="bg-zinc-100 rounded-md p-2 cursor-pointer" >Create Hex Color</button>
         <button onClick={()=>setTypeOfColor("rgb")} className="bg-zinc-100 rounded-md p-2 cursor-pointer" >Create RGB Color</button>
         <button onClick={typeOfColor === 'hex' ? handleCreateHexColor : handleCreateRgbColor} className="bg-zinc-100 rounded-md p-2 cursor-pointer" >Generate Random Color</button>
     </div>
+      </div>
   )
 }
 
